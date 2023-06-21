@@ -34,7 +34,7 @@ const TransactionsList = ({ editTransactionDetail, closeModal }) => {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicTitle">
+        <Form.Group className="mb-4" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
           <Form.Control
             name="title"
@@ -44,7 +44,7 @@ const TransactionsList = ({ editTransactionDetail, closeModal }) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicType">
+        <Form.Group className="mb-4" controlId="formBasicType">
           <Form.Label>Type:</Form.Label>
           <Form.Select aria-label="Default select example">
             <option name="type" value={editedTransaction.type}>
@@ -56,7 +56,7 @@ const TransactionsList = ({ editTransactionDetail, closeModal }) => {
             onChange={handleChange}
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicAmount">
+        <Form.Group className="mb-4" controlId="formBasicAmount">
           <Form.Label>Amount</Form.Label>
           <Form.Control
             name="amount"
