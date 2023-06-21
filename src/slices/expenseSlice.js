@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   transactions: [
     {
-      title: "hellll",
-      type: "income",
-      amount: 34,
+      title: "Dog Food",
+      type: "expense",
+      amount: 360,
+      id: uuidv4(),
     },
-    { title: "happ", type: "expense", amount: 200 },
+    { title: "allowance", type: "income", amount: 4000, id: uuidv4() },
   ],
   balance: 0,
 };
@@ -19,7 +21,7 @@ const expenseSlice = createSlice({
     addTransaction: (state, action) => {
       const { title, type, amount } = action.payload;
       const newTransaction = {
-        id: Date.now(),
+        id: uuidv4(),
         title,
         type,
         amount,
@@ -54,7 +56,7 @@ const expenseSlice = createSlice({
           type,
           amount,
         };
-        
+
         const amountDifference =
           type === "income"
             ? amount - transaction.amount

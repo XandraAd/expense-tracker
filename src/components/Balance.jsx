@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useSelector } from "react-redux";
-import numberWithCommas from "./BalanceSelector";
+//import numberWithCommas from "./BalanceSelector";
 
 export default function Balance() {
   const balance = useSelector((state) => {
-    return state.balance;
+    return state.expenseReducer.balance;
   });
 
   return (
